@@ -1,0 +1,40 @@
+<%- include('partials/header.ejs') %>
+
+<!-- <h6>Create Post</h6> -->
+<main id="create-container">
+	<!-- <h1>Create a post</h1> -->
+
+	<section id="create-section">
+		<h6>Create Post</h6>
+		<hr />
+		<form action="/submit" method="post" class="create-inner-layout">
+			<!-- title -->
+			<div class="post-title">
+				<label for="postTitle" class="title">Post Title:</label>
+				<input type="text" name="postTitle" id="postTitle" />
+			</div>
+
+			<!-- description -->
+			<div class="post-description">
+				<label for name="postDescription" class="title">Description:</label>
+				<input type="text" name="postDescription" id="postDescription" />
+			</div>
+
+			<!-- body -->
+			<div class="post-content">
+				<textarea
+					placeholder="content goes here"
+					name="postContent"
+					id="postContent"
+				></textarea>
+			</div>
+
+			<div id="create-post-btns">
+				<!-- <button type="button" id="delete">clear post</button> -->
+				<button type="submit" id="save">save post</button>
+			</div>
+		</form>
+	</section>
+</main>
+
+<%- include('partials/footer.ejs') %>

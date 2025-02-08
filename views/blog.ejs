@@ -1,12 +1,40 @@
 <%- include('partials/header.ejs') %>
 
-<main>
-
+<header class="blog-title-header">
 	<h5>Blog</h5>
+	<h1>Tips and recommendations on writing your heart's content</h1>
+</header>
 
-	<h2>Tips and recommendations on writing your heart's content</h2>
+<main id=" container" class="posts-container">
+	<section>
+		<% for (let i = 0; i < posts.length; i++) { %>
+		<article class="post-wrapper">
+			<div class="post-img-wrapper">
+				<% let src = `assets/article-img${i+1}.jpg` %>
+
+				<img src="<%= src %>" alt="" />
+			</div>
+			<div class="post">
+			<form action="/post" method="post">
+				<a href="">
+					<h6 class="post-title"><%= posts[i].postTitle%></h6>
+					<p class="post-subtitle"><%= posts[i].postDescription%></p>
+				</a>
+				<input type="hidden" name="id" value="<%= i %>" />
+			</div>
+				<button class="blog-submit-btn" type="submit">
+					<img
+						class="read-more-icon"
+						src="assets/up-right-arrow.svg"
+						alt="arrow icon"
+					/>
+				</button>
+			</form>
+		</article>
+		<% } %>
+
+		
+	</section>
 </main>
-
-
 
 <%- include('partials/footer.ejs') %>

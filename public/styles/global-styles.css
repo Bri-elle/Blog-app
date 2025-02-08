@@ -23,10 +23,13 @@ html {
 }
 
 body {
-	width: 100%;
-	min-height: 100%;
+	width: 100vw;
+	min-height: 100vh;
 	padding: 4% 10%;
-  font-size: 16px;
+	font-size: 16px;
+
+	display: flex;
+	flex-direction: column;
 }
 
 a {
@@ -77,8 +80,7 @@ li {
 	justify-content: center;
 	align-items: center;
 	padding: 0 5%;
-	background-color: cornflowerblue;
-	color: white;
+	background-color: #b5a0ea;
 	width: 100%;
 	max-width: 450px;
 	height: 100%;
@@ -105,9 +107,28 @@ h1 {
 	font-weight: 600;
 }
 
+h2 {
+	font-size: 2.488rem;
+}
+
+h3 {
+	font-size: 2.074rem;
+}
+h4 {
+	font-size: 1.728rem;
+}
+h5 {
+	font-size: 1.44rem;
+}
+h6 {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
 /* || large Screens */
 #container {
+	flex: 1;
 	margin: 0 auto;
+	position: relative;
 	/* border: 2px solid green; */
 }
 .hero-section {
@@ -167,7 +188,7 @@ h1 {
 	margin: 0 auto;
 	display: block;
 	text-align: center;
-	background-color: #B5A0EA;
+	background-color: #b5a0ea;
 	padding: 10px 5px;
 	border-radius: 8px;
 }
@@ -179,35 +200,34 @@ h1 {
 
 .categories-body {
 	display: flex;
-  justify-content: space-between;
+	justify-content: space-between;
 }
 
-.categories-body p{
-/* border:2px solid red; */
+.categories-body p {
+	/* border:2px solid red; */
 	width: 50%;
 }
 
-.categories-link{
-display: flex;
-row-gap: 10px;
-flex-direction: column;
+.categories-link {
+	display: flex;
+	row-gap: 10px;
+	flex-direction: column;
 }
 
-.categories-link img{
-  display: inline-block;
-  margin-left: 5px;
+.categories-link img {
+	display: inline-block;
+	margin-left: 5px;
 }
 
-hr{
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+hr {
+	margin-top: 4rem;
+	margin-bottom: 2rem;
 }
 
 /* FOOTER */
-footer{
-  margin: 2rem;
-  display: flex;
-  justify-content: space-between;
+footer {
+	display: flex;
+	justify-content: space-between;
 }
 
 /* Colors/Backgrounds */
@@ -232,4 +252,19 @@ footer{
 	.menu-open-btn {
 		display: none;
 	}
+
+	.side-bar {
+		display: none;
+	}
+}
+
+/* ||About us Page */
+.about-us-container {
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 8rem;
+}
+
+.about-us-container h1 {
+	margin-top: 4rem;
 }

@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+<main id="container" class="post-container">
+	<header class="post-heading">
+		<h3><%= title %></h3>
+	</header>
+	<article>
+		<span> <%= description %></span>
+		<%= content %>
+	</article>
+
+	<form action="/delete" method="post" class="delete-btn-wrapper">
+		<!-- <button type="button" id="update-post-btn" onclick="">update post</button> -->
+		<input type="hidden" name="id" value="<%= id %>" />
+		<button type="submit" id="delete-post-btn">delete post</button>
+	</form>
+</main>
+<%- include('partials/footer') %>
