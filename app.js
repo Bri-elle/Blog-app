@@ -89,6 +89,7 @@ app.post("/submit", (req, res) => {
 	});
 	// console.log(title, description, content);
 	res.render("post", {
+		id:id,
 		title: title,
 		description: description,
 		content: content,
