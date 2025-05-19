@@ -1,0 +1,52 @@
+<%- include('partials/header.ejs') %>
+
+<main id="update-container">
+	<section id="update-section">
+		<h6>update Post</h6>
+		<hr />
+		<form action="/submit2" method="post" class="create-inner-layout">
+			<!-- title -->
+			<div class="post-title">
+				<label for="postTitle" class="title">Post Title:</label>
+				<input
+					type="text"
+					name="postTitle"
+					id="postTitle"
+					value="<%=title  %>"
+				/>
+			</div>
+
+			<!-- description -->
+			<div class="post-description">
+				<label for name="postDescription" class="title">Description:</label>
+				<input
+					type="text"
+					name="postDescription"
+					id="postDescription"
+					value="<%= description %>"
+				/>
+			</div>
+
+			<!-- body -->
+			<div class="post-content">
+				<textarea
+					placeholder="content goes here"
+					name="postContent"
+					id="postContent"
+				>
+      <%= content %>
+      </textarea
+				>
+			</div>
+
+			<input type="hidden" name="id" value="<%= id %>" />
+
+			<div id="create-post-btns">
+				<!-- <button type="button" id="delete">clear post</button> -->
+				<button type="submit" id="save">save post</button>
+			</div>
+		</form>
+	</section>
+</main>
+
+<%- include('partials/footer.ejs') %>

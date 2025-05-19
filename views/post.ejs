@@ -10,9 +10,15 @@
 	</article>
 
 	<form action="/delete" method="post" class="delete-btn-wrapper">
-		<!-- <button type="button" id="update-post-btn" onclick="">update post</button> -->
+		<!-- <button type="button" id="update-post-btn">update post</button> -->
 		<input type="hidden" name="id" value="<%= id %>" />
 		<button type="submit" id="delete-post-btn">delete post</button>
+	</form>
+
+	<form action="/update" method="get" class="delete-btn-wrapper">
+		<input type="hidden" name="id" value="<%= id %>" />
+		<button type="submit" id="update-post-btn">update post</button>
+		<!-- <button type="submit" id="delete-post-btn">delete post</button> -->
 	</form>
 </main>
 <%- include('partials/footer') %>
