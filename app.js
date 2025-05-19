@@ -55,7 +55,7 @@ app.get("/blog", (req, res) => {
 
 //answer create page request
 app.get("/create", (req, res) => {
-	res.render("create.ejs");
+	res.render("create");
 });
 
 app.get("/update", (req, res) => {
@@ -67,7 +67,7 @@ app.get("/update", (req, res) => {
 	console.log("All posts:", posts);
 
 	console.log(`Post: ${JSON.stringify(post)}`);
-	res.render("update.ejs", {
+	res.render("update", {
 		id: id,
 		title: posts[id - 1].postTitle,
 		description: posts[id - 1].postDescription,
@@ -88,7 +88,7 @@ app.post("/submit", (req, res) => {
 		postBody: content,
 	});
 	// console.log(title, description, content);
-	res.render("post.ejs", {
+	res.render("post", {
 		title: title,
 		description: description,
 		content: content,
@@ -111,7 +111,7 @@ app.post("/submit2", (req, res) => {
 		(post.postDescription = description),
 		(post.postBody = content),
 		// console.log(title, description, content);
-		res.render("blog.ejs", { posts: posts });
+		res.render("blog", { posts: posts });
 	//route them to the view page
 });
 
@@ -121,7 +121,7 @@ app.post("/post", (req, res) => {
 	id = +id;
 	id += 1;
 	console.log(id);
-	res.render("post.ejs", {
+	res.render("post", {
 		id: id,
 		title: posts[id - 1].postTitle,
 		description: posts[id - 1].postDescription,
