@@ -52,7 +52,10 @@ app.use(express.static("public"));
 app.get("/blog", (req, res) => {
 	res.render("blog", { posts: posts });
 });
-
+//home page set up
+app.get("/", (req, res) => {
+	res.render("index", { posts: posts });
+});
 //answer create page request
 app.get("/create", (req, res) => {
 	res.render("create");
@@ -89,7 +92,7 @@ app.post("/submit", (req, res) => {
 	});
 	// console.log(title, description, content);
 	res.render("post", {
-		id:id,
+		id: id,
 		title: title,
 		description: description,
 		content: content,
@@ -129,6 +132,23 @@ app.post("/post", (req, res) => {
 		content: posts[id - 1].postBody,
 	});
 });
+//display blog post for index.ejs
+app.get("/post/:id", (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  const post = posts.find(p => p.postId === id);
+
+  if (!post) {
+    return res.status(404).send("Post not found");
+  }
+
+  res.render("post", {
+    id: post.postId,
+    title: post.postTitle,
+    description: post.postDescription,
+    content: post.postBody,
+  });
+});
+
 
 // delete post
 app.post("/delete", (req, res) => {

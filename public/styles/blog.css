@@ -97,6 +97,7 @@ input {
 }
 
 textarea {
+	padding: 1em;
 	width: 100%;
 	vertical-align: top;
 	height: 12rem;
@@ -184,4 +185,53 @@ textarea:focus {
 	color: black;
 	border: 2px solid #b5a0ea;
 	padding: 5px 10px;
+}
+
+@media (max-width: 992px) {
+	body {
+		line-height: 1.6;
+		padding: 4%;
+	}
+
+	.posts-container {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	#create-container {
+		background-color: #fff;
+		min-height: 700px;
+		width: 100%;
+		padding: 0rem;
+	}
+
+	#create-section {
+		width: 98%;
+		height: 98%;
+		border: 5px solid #e7e9ea;
+	}
+
+	.post-title,
+	.post-description {
+		flex-direction: column;
+	}
+	.title,
+	label {
+		display: block;
+
+		width: 100%;
+		/* border: 2px solid; */
+		/* text-align: right; */
+	}
+
+	input {
+		display: block;
+	}
+	.create-inner-layout {
+		height: 100%;
+		/* border: 5px solid green; */
+	}
+}
+
+@media (min-width: 993px) {
 }
